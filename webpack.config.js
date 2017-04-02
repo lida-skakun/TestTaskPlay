@@ -28,6 +28,10 @@ module.exports = {
                 loader: 'url?limit=900000',
  
             },
+            {
+                test: /\.json$/,
+                loader: 'json-loader'
+            },
             { test: /\.(woff|woff2)$/,  loader: "url-loader?limit=10000&mimetype=application/font-woff" },
             { test: /\.ttf$/,    loader: "file-loader" },
             { test: /\.eot$/,    loader: "file-loader" },
@@ -35,7 +39,7 @@ module.exports = {
         ]
     },
     resolve: {
-        extensions: ['', '.js', '.jsx'],
+        extensions: ['', '.js', '.jsx', 'json'],
     },
     output: {
         path:'.',

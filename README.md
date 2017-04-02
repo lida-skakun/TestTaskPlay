@@ -1,5 +1,5 @@
 # Travel Agency
-
+node, nodejs, npm
 ## Local setup
 
 - Clone the repository

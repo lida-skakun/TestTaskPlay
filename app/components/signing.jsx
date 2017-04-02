@@ -18,7 +18,7 @@ export default class Signing extends React.Component {
 
     render () {
         return  <div className="new">
-            <form>
+            <form id="form">
                 <h2> Sign in with your Account</h2>
                 <label htmlFor="email">Email</label><br />
                 <input 
@@ -61,10 +61,14 @@ export default class Signing extends React.Component {
     }
 
     validation (password, email) {
-        if((password == "123") && (email == "user@com")) {
-            this.setState({disabled: 0})
-        } else {
-            this.setState({disabled: "disabled"})
+        var data = require('./users.json');
+        for (var i = 0; i < data.length; i++ ) {
+            if(password == data[i].password && email == data[i].email) {
+                this.setState({disabled: 0})
+                break
+            } else {
+                this.setState({disabled: "disabled"})
+            }
         }
     }
 
